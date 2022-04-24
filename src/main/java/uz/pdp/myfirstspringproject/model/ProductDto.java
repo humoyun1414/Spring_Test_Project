@@ -19,4 +19,5 @@ public class ProductDto {
     @NotNull(message = "type not be empty")
     private String type;
 
+
 }

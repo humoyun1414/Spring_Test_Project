@@ -9,11 +9,17 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import uz.pdp.myfirstspringproject.entity.Product;
 import uz.pdp.myfirstspringproject.model.ProductDto;
 import uz.pdp.myfirstspringproject.repository.ProductRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -57,4 +63,5 @@ public class ProductService {
         Optional<Product> optionalProduct = productRepository.findById(id);
         return optionalProduct.isPresent();
     }
+
 }
